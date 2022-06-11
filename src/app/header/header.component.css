@@ -1,0 +1,20 @@
+.header {
+    background-color: rgb(213, 235, 255);
+    margin: -10px;
+
+}
+
+.name {
+    color: rgb(104, 104, 104);
+    font-size: 65px;
+}
+
+p {
+    font-family: system-ui;
+    font-weight: bolder;
+    color: #1E90FF;
+    font-size: 65px;
+}
+
+
+
