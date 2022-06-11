@@ -5,21 +5,23 @@ import { PlanningComponent } from './planning/planning.component';
 import { PlanningService } from './planning/planning.service';
 import { HeaderComponent } from './header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { EleveComponent } from './eleve/eleve.component';
-import { AppRoutingModule } from './app-routing.module';
-import { CommonModule } from '@angular/common';
+import { EleveComponent } from './ceerEleve/eleve.component';
+import { ApplicationModule } from './routing/application.module';
+import { AppRoutingModule } from './routing/app-routing.module';
+import { AfficherEleveComponent } from './afficher-eleve/afficher-eleve.component';
 @NgModule({
   declarations: [
     PlanningComponent,
     HeaderComponent,
-    EleveComponent
+    EleveComponent,
+    AfficherEleveComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FlexLayoutModule,
-    CommonModule, 
-    AppRoutingModule
+    AppRoutingModule,
+    ApplicationModule
   ],
   providers: [PlanningService],
   bootstrap: [PlanningComponent]
