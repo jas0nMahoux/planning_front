@@ -16,8 +16,7 @@ import { EleveHomeComponent } from './page/eleve/eleve-home/eleve-home.component
 import { AfficherSalleComponent } from './page/salle/afficher-salle/afficher-salle.component';
 import { SalleHomeComponent } from './page/salle/salle-home/salle-home.component';
 import { CreerNiveauComponent } from './page/niveau/creer-niveau/creer-niveau.component';
-import { AfficherNiveauComponent } from './afficher-niveau/afficher-niveau.component';
-import { NiveauHomeComponent } from './niveau-home/niveau-home.component';
+import { AfficherNiveauComponent } from './page/niveau/afficher-niveau/afficher-niveau.component';
 @NgModule({
   declarations: [
     PlanningComponent,
@@ -29,8 +28,7 @@ import { NiveauHomeComponent } from './niveau-home/niveau-home.component';
     AfficherSalleComponent,
     SalleHomeComponent,
     CreerNiveauComponent,
-    AfficherNiveauComponent,
-    NiveauHomeComponent
+    AfficherNiveauComponent
   ],
   imports: [
     BrowserModule,
