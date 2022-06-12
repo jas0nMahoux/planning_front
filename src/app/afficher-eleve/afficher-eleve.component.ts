@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EleveService } from '../eleve/eleve.service';
+import { AfficherEleveService } from './afficher-eleve.service';
 import { Eleve } from '../eleve/eleve';
 import { HttpErrorResponse } from '@angular/common/http';
+import { EleveService } from '../eleve/eleve.service';
 
 @Component({
   selector: 'app-afficher-eleve',
@@ -11,7 +12,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class AfficherEleveComponent implements OnInit {
   allEleve: Eleve[];
 
-  constructor(private eleveService: EleveService) { }
+  constructor(private afficherEleveService: AfficherEleveService, private eleveService:EleveService) { }
 
   ngOnInit(): void {
     this.eleveService.getAllEleve().subscribe(
@@ -21,6 +22,10 @@ export class AfficherEleveComponent implements OnInit {
         alert(error.message);
       }
     )
+  }
+
+  public deleteEleve(e:Eleve): void {
+    this.afficherEleveService.removeEleve(e).subscribe()
   }
 
 }
