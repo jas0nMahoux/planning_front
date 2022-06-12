@@ -21,19 +21,19 @@ export class EleveComponent implements OnInit{
     age: new FormControl(),
     adresse: new FormControl(),
     niveau: new FormControl()
-  })
+  });
 
   constructor(private eleveService: EleveService) {}
 
   submit() {
-    console.log(this.eleveForm)
+    this.createEleve(this.eleveForm);
   }
 
   ngOnInit(): void {
     
   }
   
-  public createEleve(eleve: Eleve): void {
+  public createEleve(eleve: FormGroup): void {
     this.eleveService.creerEleve(eleve).subscribe(
       (response: Eleve) => {
         this.eleve = response;

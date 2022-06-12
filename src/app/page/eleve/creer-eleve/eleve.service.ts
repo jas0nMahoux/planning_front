@@ -3,6 +3,7 @@ import { Observable } from 'rxjs'
 import { Eleve } from '../eleve';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root'
@@ -12,8 +13,9 @@ export class EleveService {
 
     constructor(private http: HttpClient) { }
 
-    public creerEleve(eleve: Eleve): Observable<Eleve> {
-        return this.http.post<Eleve>(`${this.apiServerUrl}/save`, eleve)
+    public creerEleve(eleve: FormGroup): Observable<Eleve> {
+        console.log(eleve.value);
+        return this.http.post<Eleve>(`${this.apiServerUrl}/save`, eleve.value)
     }
 
     public getAllEleve(): Observable<Eleve[]> {
