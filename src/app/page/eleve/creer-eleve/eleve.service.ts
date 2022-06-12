@@ -14,14 +14,10 @@ export class EleveService {
     constructor(private http: HttpClient) { }
 
     public creerEleve(eleve: FormGroup): Observable<Eleve> {
-        console.log(eleve.value);
         return this.http.post<Eleve>(`${this.apiServerUrl}/save`, eleve.value)
     }
 
     public getAllEleve(): Observable<Eleve[]> {
         return this.http.get<Eleve[]>(`${this.apiServerUrl}/findAllEleve`)
     }
-
-    
-
 }
