@@ -9,6 +9,8 @@ import { EleveComponent } from './ceerEleve/eleve.component';
 import { ApplicationModule } from './routing/application.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AfficherEleveComponent } from './afficher-eleve/afficher-eleve.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     PlanningComponent,
@@ -21,7 +23,9 @@ import { AfficherEleveComponent } from './afficher-eleve/afficher-eleve.componen
     HttpClientModule,
     FlexLayoutModule,
     AppRoutingModule,
-    ApplicationModule
+    ApplicationModule, 
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [PlanningService],
   bootstrap: [PlanningComponent]
