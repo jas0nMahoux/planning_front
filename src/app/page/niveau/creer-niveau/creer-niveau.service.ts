@@ -14,7 +14,7 @@ export class CreerNiveauService {
     constructor(private http: HttpClient) { }
 
     public creerNiveau(niveau: FormGroup): Observable<Niveau> {
-        return this.http.post<Niveau>(`${this.apiServerUrl}/save`, niveau.value)
+        return this.http.post<Niveau>(`${this.apiServerUrl}/saveNiveau`, niveau.value)
     }
 
     public getAllNiveau(): Observable<Niveau[]> {

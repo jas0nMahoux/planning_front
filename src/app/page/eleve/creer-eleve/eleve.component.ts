@@ -4,7 +4,7 @@ import { Eleve } from '../eleve';
 import { EleveService } from './eleve.service';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Niveau } from '../niveau';
+import { Niveau } from '../../niveau/niveau';
 
 @Component({
   selector: 'app-eleve',
