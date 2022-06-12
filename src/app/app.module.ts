@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreerSalleComponent } from './page/salle/creer-salle/creer-salle.component';
 import { EleveHomeComponent } from './page/eleve/eleve-home/eleve-home.component';
+import { AfficherSalleComponent } from './page/salle/afficher-salle/afficher-salle.component';
+import { SalleHomeComponent } from './page/salle/salle-home/salle-home.component';
 @NgModule({
   declarations: [
     PlanningComponent,
@@ -20,7 +22,9 @@ import { EleveHomeComponent } from './page/eleve/eleve-home/eleve-home.component
     EleveComponent,
     AfficherEleveComponent,
     CreerSalleComponent,
-    EleveHomeComponent
+    EleveHomeComponent,
+    AfficherSalleComponent,
+    SalleHomeComponent
   ],
   imports: [
     BrowserModule,

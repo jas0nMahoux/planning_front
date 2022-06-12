@@ -1,1 +1,21 @@
-<p>creer-salle works!</p>
+<p>formulaire création salle</p>
+
+<div *ngIf="!cree">
+  <form [formGroup]="salleForm" (ngSubmit)="submit()" fxLayout="column">
+    <label for="capacite">Capacité
+      <input type="text" formControlName="capacite" name="capacite" id="capacite" ngModel>
+    </label>
+    <label for="nom">Nom
+      <input type="text" formControlName="nom" name="nom" id="nom" ngModel>
+    </label>
+    <label for="code">Code
+      <input type="text" formControlName="code" name="code" id="code" ngModel>
+    </label>
+    <button type="submit">Créer</button>
+  </form>
+</div>
+
+<div *ngIf="cree">
+  <p>La salle a bien été créé !</p>
+  <button (click)="creerAutreSalle()">Créer une autre salle</button>
+</div>
