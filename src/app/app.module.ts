@@ -12,13 +12,15 @@ import { AfficherEleveComponent } from './page/eleve/afficher-eleve/afficher-ele
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreerSalleComponent } from './page/salle/creer-salle/creer-salle.component';
+import { EleveHomeComponent } from './page/eleve/eleve-home/eleve-home.component';
 @NgModule({
   declarations: [
     PlanningComponent,
     HeaderComponent,
     EleveComponent,
     AfficherEleveComponent,
-    CreerSalleComponent
+    CreerSalleComponent,
+    EleveHomeComponent
   ],
   imports: [
     BrowserModule,

@@ -43,6 +43,7 @@ export class AfficherEleveComponent implements OnInit {
 
   submit(e:FormGroup) {
     this.afficherEleveService.updateEleve(e).subscribe();
+    this.modif = false;
   }
 
   public removeEleve(e:Eleve):void {

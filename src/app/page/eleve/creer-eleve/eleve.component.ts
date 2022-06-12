@@ -14,6 +14,7 @@ import { Niveau } from '../niveau';
 export class EleveComponent implements OnInit{
   eleve: Eleve;
   niv: Niveau[];
+  cree = false;
 
   eleveForm = new FormGroup({
     nom: new FormControl(),
@@ -27,6 +28,7 @@ export class EleveComponent implements OnInit{
 
   submit() {
     this.createEleve(this.eleveForm);
+    this.cree = true;
   }
 
   ngOnInit(): void {
@@ -37,10 +39,13 @@ export class EleveComponent implements OnInit{
     this.eleveService.creerEleve(eleve).subscribe(
       (response: Eleve) => {
         this.eleve = response;
-        
       }, (error: HttpErrorResponse) => {
         alert(error.message);
       }
     )
+  }
+
+  public creerAutreEleve(): void {
+    this.cree = false;
   }
 }

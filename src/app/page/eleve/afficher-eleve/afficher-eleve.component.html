@@ -1,4 +1,6 @@
-<p>afficher-eleve works!</p>
+<div *ngIf="allEleve.length == 0">
+  <p>Il n'y a pas d'élève enregistrer dans la base de données !</p>
+</div>
 
 <div *ngIf="!modif">
   <div *ngFor="let eleve of allEleve">
