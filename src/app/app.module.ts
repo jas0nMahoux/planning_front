@@ -5,7 +5,7 @@ import { PlanningComponent } from './planning/planning.component';
 import { PlanningService } from './planning/planning.service';
 import { HeaderComponent } from './header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { EleveComponent } from './ceerEleve/eleve.component';
+import { EleveComponent } from './eleve/eleve.component';
 import { ApplicationModule } from './routing/application.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AfficherEleveComponent } from './afficher-eleve/afficher-eleve.component';

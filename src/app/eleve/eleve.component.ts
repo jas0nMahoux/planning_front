@@ -11,7 +11,7 @@ import { Niveau } from './niveau';
   templateUrl: 'eleve.component.html',
   styleUrls: ['eleve.component.css']
 })
-export class EleveComponent implements OnInit{
+export class EleveComponent implements OnInit {
   eleve: Eleve;
   eleveForm: FormGroup;
   niv: Niveau[];

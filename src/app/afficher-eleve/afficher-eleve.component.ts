@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EleveService } from '../ceerEleve/eleve.service';
-import { Eleve } from '../ceerEleve/eleve';
+import { EleveService } from '../eleve/eleve.service';
+import { Eleve } from '../eleve/eleve';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
