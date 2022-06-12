@@ -11,12 +11,14 @@ import { AppRoutingModule } from './routing/app-routing.module';
 import { AfficherEleveComponent } from './page/eleve/afficher-eleve/afficher-eleve.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CreerSalleComponent } from './page/salle/creer-salle/creer-salle.component';
 @NgModule({
   declarations: [
     PlanningComponent,
     HeaderComponent,
     EleveComponent,
-    AfficherEleveComponent
+    AfficherEleveComponent,
+    CreerSalleComponent
   ],
   imports: [
     BrowserModule,
