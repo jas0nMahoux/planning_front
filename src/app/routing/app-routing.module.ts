@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AfficherCoursComponent } from '../page/cours/afficher-cours/afficher-cours.component';
+import { CoursHomeComponent } from '../page/cours/cours-home/cours-home.component';
+import { CreerCoursComponent } from '../page/cours/creer-cours/creer-cours.component';
 import { AfficherEleveComponent } from '../page/eleve/afficher-eleve/afficher-eleve.component';
 import { EleveComponent } from '../page/eleve/creer-eleve/eleve.component';
 import { EleveHomeComponent } from '../page/eleve/eleve-home/eleve-home.component';
@@ -14,13 +17,18 @@ const routes: Routes = [
   { path:"eleve", component: EleveHomeComponent},
   { path:"eleve/creation", component: EleveComponent},
   { path:"eleve/consultation", component: AfficherEleveComponent},
+
   { path:"salle", component: SalleHomeComponent},
   { path:"salle/creation", component: CreerSalleComponent},
   { path:"salle/consultation", component: AfficherSalleComponent},
+
   { path:"niveau", component: NiveauHomeComponent},
   { path:"niveau/creation", component: CreerNiveauComponent},
   { path:"niveau/consultation", component: AfficherNiveauComponent},
-  { path:"allEleve", component: AfficherEleveComponent }
+
+  { path:"cours", component: CoursHomeComponent},
+  { path:"cours/creation", component: CreerCoursComponent},
+  { path:"cours/consultation", component: AfficherCoursComponent},
 ];
 
 @NgModule({

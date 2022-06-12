@@ -18,6 +18,10 @@ import { AfficherSalleComponent } from './page/salle/afficher-salle/afficher-sal
 import { SalleHomeComponent } from './page/salle/salle-home/salle-home.component';
 import { CreerNiveauComponent } from './page/niveau/creer-niveau/creer-niveau.component';
 import { AfficherNiveauComponent } from './page/niveau/afficher-niveau/afficher-niveau.component';
+import { CreerCoursComponent } from './page/cours/creer-cours/creer-cours.component';
+import { AfficherCoursComponent } from './page/cours/afficher-cours/afficher-cours.component';
+import { CoursHomeComponent } from './page/cours/cours-home/cours-home.component';
+
 @NgModule({
   declarations: [
     PlanningComponent,
@@ -30,7 +34,10 @@ import { AfficherNiveauComponent } from './page/niveau/afficher-niveau/afficher-
     SalleHomeComponent,
     CreerNiveauComponent,
     AfficherNiveauComponent,
-    NiveauHomeComponent
+    NiveauHomeComponent,
+    CreerCoursComponent, 
+    AfficherCoursComponent, 
+    CoursHomeComponent
   ],
   imports: [
     BrowserModule,

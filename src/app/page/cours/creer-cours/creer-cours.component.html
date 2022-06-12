@@ -1,0 +1,28 @@
+<p>formulaire création cours</p>
+
+<div *ngIf="!cree">
+  <form [formGroup]="coursForm" (ngSubmit)="submit()" fxLayout="column">
+    <label for="dateDebut">Date de debut
+      <input type="date" formControlName="dateDebut" name="dateDebut" id="dateDebut" ngModel>
+    </label>
+    <label for="dateFin">Date de fin
+      <input type="date" formControlName="dateFin" name="dateFin" id="dateFin" ngModel>
+    </label>
+    <label for="niveau">Niveau
+        <select id="niveau" formControlName="niveau" formControlName="niveau">
+            <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
+        </select>
+    </label>
+    <label for="salle">Salle
+        <select id="salle" formControlName="salle" formControlName="salle">
+            <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
+        </select>
+    </label>
+    <button type="submit">Créer</button>
+  </form>
+</div>
+
+<div *ngIf="cree">
+  <p>le cours a bien été créé !</p>
+  <button (click)="creerAutreCours()">Créer un autre cours</button>
+</div>
