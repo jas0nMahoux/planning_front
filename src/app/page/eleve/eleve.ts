@@ -1,4 +1,4 @@
-import { Niveau } from "./niveau";
+import { Niveau } from "../niveau/niveau";
 
 export interface Eleve {
     id: number;

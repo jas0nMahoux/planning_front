@@ -1,0 +1,18 @@
+<p>formulaire création niveau</p>
+
+<div *ngIf="!cree">
+  <form [formGroup]="niveauForm" (ngSubmit)="submit()" fxLayout="column">
+    <label for="code">Code
+      <input type="text" formControlName="code" name="code" id="code" ngModel>
+    </label>
+    <label for="libelle">Libelle
+      <input type="text" formControlName="libelle" name="libelle" id="libelle" ngModel>
+    </label>
+    <button type="submit">Créer</button>
+  </form>
+</div>
+
+<div *ngIf="cree">
+  <p>le niveau a bien été créé !</p>
+  <button (click)="creerAutreNiveau()">Créer un autre niveau</button>
+</div>
