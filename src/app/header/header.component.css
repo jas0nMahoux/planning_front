@@ -1,7 +1,8 @@
 .header {
-    background-color: rgb(213, 235, 255);
+    background-image: url("../../assets/img/background/banner-universite-histoire.jpg");
     margin:0px;
-
+    /*-webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 */
+    /*filter: grayscale(100%);*/
 }
 
 .name {
@@ -9,7 +10,7 @@
     font-size: 65px;
 }
 
-p {
+.header p {
     font-family: system-ui;
     font-weight: bolder;
     color: #1E90FF;
@@ -17,4 +18,7 @@ p {
 }
 
 
-
+img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+} 

@@ -4,7 +4,7 @@ import { Salle } from '../salle';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherSalleService } from './afficher-salle.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { number } from 'echarts';
+//import { number } from 'echarts';
 
 @Component({
   selector: 'app-afficher-salle',

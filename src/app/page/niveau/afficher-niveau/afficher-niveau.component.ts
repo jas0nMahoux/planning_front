@@ -4,7 +4,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherNiveauService } from './afficher-niveau.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
-import { number } from 'echarts';
+//import { number } from 'echarts';
 
 @Component({
   selector: 'app-afficher-niveau',

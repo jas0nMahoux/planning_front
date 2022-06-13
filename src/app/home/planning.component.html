@@ -1,10 +1,11 @@
 <app-header></app-header>
 
-<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center">
-    <a routerLink="eleve">Elève</a>
-    <a routerLink="cours">Cours</a>
-    <a routerLink="salle">Salle</a>
-    <a routerLink="niveau">Niveaux</a>
-</div>
-
+<!--<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center">-->
+<ul fxLayoutAlign="center">
+    <li><a routerLink="eleve">Elèves</a></li>
+    <li><a routerLink="cours">Cours</a></li>
+    <li><a routerLink="salle">Salles</a></li>
+    <li><a routerLink="niveau">Niveaux</a></li>
+</ul>
+    
 <router-outlet></router-outlet>

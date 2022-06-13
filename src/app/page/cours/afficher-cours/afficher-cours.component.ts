@@ -4,7 +4,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherCoursService } from './afficher-cours.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
-import { number } from 'echarts';
+//import { number } from 'echarts';
 import { Cours } from '../cours';
 import { Salle } from '../../salle/salle';
 
