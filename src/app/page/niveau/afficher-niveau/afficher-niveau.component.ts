@@ -11,6 +11,7 @@ import { Niveau } from '../../niveau/niveau';
   templateUrl: './afficher-niveau.component.html',
   styleUrls: ['./afficher-niveau.component.css']
 })
+
 export class AfficherNiveauComponent implements OnInit {
   allNiveau: Niveau[];
 

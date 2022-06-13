@@ -1,14 +1,14 @@
-<p>formulaire création niveau</p>
-
-<div *ngIf="!cree">
+<div class="formulaire" *ngIf="!cree">
+  <h1>formulaire de création d'un niveau</h1>
   <form [formGroup]="niveauForm" (ngSubmit)="submit()" fxLayout="column">
-    <label for="code">Code
-      <input type="text" formControlName="code" name="code" id="code" ngModel>
-    </label>
-    <label for="libelle">Libelle
-      <input type="text" formControlName="libelle" name="libelle" id="libelle" ngModel>
-    </label>
-    <button type="submit">Créer</button>
+
+    <label for="code">Code</label>
+    <input type="text" formControlName="code" name="code" id="code" placeholder="Entrer le code.." ngModel>
+    
+    <label for="libelle">Libelle</label>
+    <input type="text" formControlName="libelle" name="libelle" id="libelle" placeholder="Entrer le libelle.." ngModel>
+    
+    <input type="submit" value="Créer">
   </form>
 </div>
 

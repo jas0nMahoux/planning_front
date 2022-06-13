@@ -1,25 +1,27 @@
 <div *ngIf="allNiveau.length == 0">
-    <p>Il n'y a pas de niveaux enregistrer dans la base de données !</p>
-  </div>
+  <p>Il n'y a pas de niveaux enregistrer dans la base de données !</p>
+</div>
   
-  <div *ngIf="!modif">
-    <div *ngFor="let niveau of allNiveau">
+<div *ngIf="!modif">
+  <div *ngFor="let niveau of allNiveau">
+    <div class="levels-cards">
       <p>id: {{niveau.id}}</p>
       <p>code : {{niveau.code}}</p>
       <p>libelle : {{niveau.libelle}}</p>
-      <button (click)="removeNiveau(niveau)">Supprimer le niveau</button>
       <button (click)="updateNiveau(niveau)">Modifier le niveau</button>
+      <button (click)="removeNiveau(niveau)">Supprimer le niveau</button>
     </div>
   </div>
+</div>
   
-  <div *ngIf="modif">
-    <form [formGroup]="niveauForm" (ngSubmit)="submit(niveauForm)" fxLayout="column">
-      <label for="code">Code
-        <input type="text" name="code" id="code" formControlName="code" value="{{niveauModif.code}}">
-      </label>
-      <label for="libelle">Libelle
-        <input type="text" name="libelle" id="libelle" formControlName="libelle" value="{{niveauModif.libelle}}">
-      </label>
-      <button type="submit">Modifier</button>
-    </form>
-  </div>
+<div *ngIf="modif">
+  <form [formGroup]="niveauForm" (ngSubmit)="submit(niveauForm)" fxLayout="column">
+    <label for="code">Code</label>
+    <input type="text" name="code" id="code" formControlName="code" value="{{niveauModif.code}}">
+    
+    <label for="libelle">Libelle</label>
+    <input type="text" name="libelle" id="libelle" formControlName="libelle" value="{{niveauModif.libelle}}">
+    
+    <button type="submit">Modifier</button>
+  </form>
+</div>
