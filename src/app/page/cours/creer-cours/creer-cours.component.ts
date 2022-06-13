@@ -12,6 +12,7 @@ import { Salle } from '../../salle/salle';
   templateUrl: 'creer-cours.component.html',
   styleUrls: ['creer-cours.component.css']
 })
+
 export class CreerCoursComponent implements OnInit{
   cours: Cours;
   niv: Niveau[];
@@ -20,8 +21,8 @@ export class CreerCoursComponent implements OnInit{
 
   coursForm = new FormGroup({
     id: new FormControl(),
-    dateDebut: new FormControl(),
-    dateFin: new FormControl(),
+    debut: new FormControl(),
+    fin: new FormControl(),
     niveau: new FormControl(),
     salle: new FormControl()
   });

@@ -5,8 +5,8 @@
   <div *ngIf="!modif">
     <div *ngFor="let cours of allCours">
       <p>id: {{cours.id}}</p>
-      <p>date de debut : {{cours.dateDebut}}</p>
-      <p>date de fin : {{cours.dateFin}}</p>
+      <p>date de debut : {{cours.debut}}</p>
+      <p>date de fin : {{cours.fin}}</p>
       <p>niveau : {{cours.niveau}}</p>
       <p>salle : {{cours.salle}}</p>
       <button (click)="removeCours(cours)">Supprimer le cours</button>
@@ -16,11 +16,11 @@
   
   <div *ngIf="modif">
     <form [formGroup]="coursForm" (ngSubmit)="submit(coursForm)" fxLayout="column">
-      <label for="dateDebut">Date de debut
-        <input type="text" name="dateDebut" id="dateDebut" formControlName="dateDebut" value="{{coursModif.dateDebut}}">
+      <label for="debut">Date de debut
+        <input type="text" name="debut" id="debut" formControlName="debut" value="{{coursModif.debut}}">
       </label>
-      <label for="dateFin">Date de fin
-        <input type="text" name="dateFin" id="dateFin" formControlName="dateFin" value="{{coursModif.dateFin}}">
+      <label for="fin">Date de fin
+        <input type="text" name="fin" id="fin" formControlName="fin" value="{{coursModif.fin}}">
       </label>
       <label for="niveau">Niveau
         <select id="niveau" formControlName="niveau" value="{{coursModif.niveau}}">
@@ -28,7 +28,7 @@
         </select>
       </label>
       <label for="salle">Salle
-            <select id="salle" formControlName="salle" value="{{coursModif.niveau}}">
+            <select id="salle" formControlName="salle" value="{{coursModif.salle}}">
                 <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
             </select>
       </label>

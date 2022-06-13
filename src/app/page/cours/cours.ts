@@ -4,8 +4,8 @@ import { Salle } from "../salle/salle";
 
 export interface Cours {
     id: number;
-    dateDebut: Date;
-    dateFin: Date;
+    debut: Date;
+    fin: Date;
     niveau: Niveau;
     salle: Salle;
     eleves: Eleve[];

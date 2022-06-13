@@ -53,8 +53,8 @@ export class AfficherCoursComponent implements OnInit {
   public updateCours(c:Cours):void {
     this.coursModif = c;
     this.coursForm.controls['id'].setValue(c.id);
-    this.coursForm.controls['dateDebut'].setValue(this.coursModif.dateDebut);
-    this.coursForm.controls['dateFin'].setValue(this.coursModif.dateFin);
+    this.coursForm.controls['debut'].setValue(this.coursModif.debut);
+    this.coursForm.controls['fin'].setValue(this.coursModif.fin);
     this.coursForm.controls['niveau'].setValue(this.coursModif.niveau);
     this.coursForm.controls['salle'].setValue(this.coursModif.salle);
     this.modif = true;
