@@ -50,6 +50,7 @@ export class AfficherCoursComponent implements OnInit {
     this.afficherCoursService.removeCours(c).subscribe();
   }
 
+  // Cette fonction ne marche pas
   public updateCours(c:Cours):void {
     this.coursModif = c;
     this.coursForm.controls['id'].setValue(c.id);

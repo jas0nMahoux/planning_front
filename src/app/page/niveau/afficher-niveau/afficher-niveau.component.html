@@ -2,7 +2,7 @@
   <p>Il n'y a pas de niveaux enregistrer dans la base de données !</p>
 </div>
   
-<div *ngIf="!modif">
+<div class="formulaire" *ngIf="!modif">
   <div *ngFor="let niveau of allNiveau">
     <div class="levels-cards">
       <p>id: {{niveau.id}}</p>
@@ -14,7 +14,7 @@
   </div>
 </div>
   
-<div *ngIf="modif">
+<div class="formulaire" *ngIf="modif">
   <form [formGroup]="niveauForm" (ngSubmit)="submit(niveauForm)" fxLayout="column">
     <label for="code">Code</label>
     <input type="text" name="code" id="code" formControlName="code" value="{{niveauModif.code}}">
@@ -22,6 +22,6 @@
     <label for="libelle">Libelle</label>
     <input type="text" name="libelle" id="libelle" formControlName="libelle" value="{{niveauModif.libelle}}">
     
-    <button type="submit">Modifier</button>
+    <input type="submit" value="Modifier">
   </form>
 </div>

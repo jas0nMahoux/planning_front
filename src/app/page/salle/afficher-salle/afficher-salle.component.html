@@ -1,29 +1,31 @@
 <div *ngIf="allSalle.length == 0">
     <p>Il n'y a pas d'élève enregistrer dans la base de données !</p>
-  </div>
+</div>
   
-  <div *ngIf="!modif">
-    <div *ngFor="let salle of allSalle">
-      <p>id: {{salle.id}}</p>
-      <p>capacite : {{salle.capacite}}</p>
-      <p>nom : {{salle.nom}}</p>
-      <p>code : {{salle.code}}</p>
-      <button (click)="removeSalle(salle)">Supprimer la salle</button>
-      <button (click)="updateSalle(salle)">Modifier la salle</button>
-    </div>
+<div class="formulaire" *ngIf="!modif">
+  <div *ngFor="let salle of allSalle">
+    <p>id: {{salle.id}}</p>
+    <p>capacite : {{salle.capacite}}</p>
+    <p>nom : {{salle.nom}}</p>
+    <p>code : {{salle.code}}</p>
+    <button (click)="removeSalle(salle)">Supprimer la salle</button>
+    <button (click)="updateSalle(salle)">Modifier la salle</button>
   </div>
-  
-  <div *ngIf="modif">
-    <form [formGroup]="salleForm" (ngSubmit)="submit(salleForm)" fxLayout="column">
-      <label for="capacite">Capacité
-        <input type="text" name="capacite" id="capacite" formControlName="capacite" value="{{salleModif.capacite}}">
-      </label>
-      <label for="nom">Nom
-        <input type="text" name="nom" id="nom" formControlName="nom" value="{{salleModif.nom}}">
-      </label>
-      <label for="code">Code
-        <input type="text" name="code" id="code" formControlName="code" value="{{salleModif.code}}">
-      </label>
-      <button type="submit">Modifier</button>
-    </form>
-  </div>
+</div>
+
+<div class="formulaire" *ngIf="modif">
+  <!--<h1>Modification de la salle<h2>{{salleModif.code}}</h2></h1>-->
+  <form [formGroup]="salleForm" (ngSubmit)="submit(salleForm)" fxLayout="column">
+
+    <label for="capacite">Capacité</label>
+    <input type="text" name="capacite" id="capacite" formControlName="capacite" value="{{salleModif.capacite}}">
+
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom" formControlName="nom" value="{{salleModif.nom}}">
+    
+    <label for="code">Code</label>
+    <input type="text" name="code" id="code" formControlName="code" value="{{salleModif.code}}">
+
+    <input type="submit" value="Modifier">
+  </form>
+</div>

@@ -15,25 +15,26 @@
   </div>
 </div>
 
-<div *ngIf="modif">
+<div class="formulaire" *ngIf="modif">
   <form [formGroup]="eleveForm" (ngSubmit)="submit(eleveForm)" fxLayout="column">
-    <label for="nom">Nom
-      <input type="text" name="nom" id="nom" formControlName="nom" value="{{eleveModif.nom}}">
-    </label>
-    <label for="prenom">Prenom
-      <input type="text" name="prenom" id="prenom" formControlName="prenom" value="{{eleveModif.prenom}}">
-    </label>
-    <label for="age">Age
-      <input type="text" name="age" id="age" formControlName="age" value="{{eleveModif.age}}">
-    </label>
-    <label for="adresse">Adresse
-      <input type="text" name="adresse" id="adresse" formControlName="adresse" value="{{eleveModif.adresse}}">
-    </label>
-    <label for="niveau">Niveau
-      <select id="niveau" formControlName="niveau" value="{{eleveModif.niveau}}">
-        <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
-      </select>
-    </label>
-    <button type="submit">Modifier</button>
+
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" id="nom" formControlName="nom" value="{{eleveModif.nom}}">
+    
+    <label for="prenom">Prenom</label>
+    <input type="text" name="prenom" id="prenom" formControlName="prenom" value="{{eleveModif.prenom}}">
+
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age" formControlName="age" value="{{eleveModif.age}}">
+
+    <label for="adresse">Adresse</label>
+    <input type="text" name="adresse" id="adresse" formControlName="adresse" value="{{eleveModif.adresse}}">
+
+    <label for="niveau">Niveau</label>
+    <select id="niveau" formControlName="niveau" value="{{eleveModif.niveau}}">
+      <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
+    </select>
+
+    <input type="submit" value="Modifier">
   </form>
 </div>

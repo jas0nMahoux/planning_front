@@ -2,25 +2,21 @@
   <h1>Formulaire de création de cours</h1>
   <form [formGroup]="coursForm" (ngSubmit)="submit()" fxLayout="column">
 
-    <label for="dateDebut">Date de debut
-      <input type="date" formControlName="dateDebut" name="dateDebut" id="dateDebut" ngModel>
-    </label>
+    <label for="dateDebut">Date de debut</label>
+    <input type="date" formControlName="dateDebut" name="dateDebut" id="dateDebut" ngModel>
 
-    <label for="dateFin">Date de fin
-      <input type="date" formControlName="dateFin" name="dateFin" id="dateFin" ngModel>
-    </label>
+    <label for="dateFin">Date de fin</label>
+    <input type="date" formControlName="dateFin" name="dateFin" id="dateFin" ngModel>
 
-    <label for="niveau">Niveau
-        <select id="niveau" formControlName="niveau">
-            <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
-        </select>
-    </label>
+    <label for="niveau">Niveau</label>
+    <select id="niveau" formControlName="niveau">
+        <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
+    </select>
 
-    <label for="salle">Salle
-        <select id="salle" formControlName="salle">
-            <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
-        </select>
-    </label>
+    <label for="salle">Salle</label>
+    <select id="salle" formControlName="salle">
+        <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
+    </select>
 
     <input type="submit" value="Créer">
   </form>
