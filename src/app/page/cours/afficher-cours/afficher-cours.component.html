@@ -2,8 +2,9 @@
     <p>Il n'y a pas de cours enregistrer dans la base de données !</p>
   </div>
   
-  <div *ngIf="!modif">
-    <div *ngFor="let cours of allCours">
+  <div class="content-list-cours" *ngIf="!modif">
+    <input type="submit" value="Liste des cours :">
+    <div class="formulaire" *ngFor="let cours of allCours">
       <p>id: {{cours.id}}</p>
       <p>date de debut : {{cours.debut}}</p>
       <p>date de fin : {{cours.fin}}</p>

@@ -1,11 +1,41 @@
 <app-header></app-header>
 
 <!--<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center">-->
-<ul fxLayoutAlign="center">
-    <li><a routerLink="eleve">Elèves</a></li>
-    <li><a routerLink="cours">Cours</a></li>
-    <li><a routerLink="salle">Salles</a></li>
-    <li><a routerLink="niveau">Niveaux</a></li>
-</ul>
+<ul>
+    <li style="float: left; margin: 0px 40px; font-family: 'Poppins', sans-serif; "><a class="application">Application Planning</a></li>
+    <li><a style="background-color: #111;">|</a></li>
+
+    <li class="dropdown">
+        <a class="dropbtn">Elèves</a>
+        <div class="dropdown-content">
+            <a routerLink="eleve/creation">Créer un cours</a>
+            <a routerLink="eleve/consultation">Consulter les cours</a>
+        </div>
+    </li>
     
+    <li class="dropdown">
+        <a class="dropbtn">Cours</a>
+        <div class="dropdown-content">
+            <a routerLink="cours/creation">Créer un cours</a>
+            <a routerLink="cours/consultation">Consulter les cours</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a class="dropbtn">Salles</a>
+        <div class="dropdown-content">
+            <a routerLink="salle/creation">Créer un cours</a>
+            <a routerLink="salle/consultation">Consulter les cours</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a class="dropbtn">Niveaux</a>
+        <div class="dropdown-content">
+            <a routerLink="niveau/creation">Créer un cours</a>
+            <a routerLink="niveau/consultation">Consulter les cours</a>
+        </div>
+    </li>
+</ul>
+
 <router-outlet></router-outlet>

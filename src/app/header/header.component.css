@@ -1,8 +1,7 @@
+/*
 .header {
     background-image: url("../../assets/img/background/banner-universite-histoire.jpg");
     margin:0px;
-    /*-webkit-filter: grayscale(100%);  Safari 6.0 - 9.0 */
-    /*filter: grayscale(100%);*/
 }
 
 .name {
@@ -19,6 +18,6 @@
 
 
 img {
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-} 
+}*/

@@ -12,15 +12,11 @@ import { AfficherEleveComponent } from './page/eleve/afficher-eleve/afficher-ele
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreerSalleComponent } from './page/salle/creer-salle/creer-salle.component';
-import { EleveHomeComponent } from './page/eleve/eleve-home/eleve-home.component';
-import { NiveauHomeComponent } from './page/niveau/niveau-home/niveau-home.component';
 import { AfficherSalleComponent } from './page/salle/afficher-salle/afficher-salle.component';
-import { SalleHomeComponent } from './page/salle/salle-home/salle-home.component';
 import { CreerNiveauComponent } from './page/niveau/creer-niveau/creer-niveau.component';
 import { AfficherNiveauComponent } from './page/niveau/afficher-niveau/afficher-niveau.component';
 import { CreerCoursComponent } from './page/cours/creer-cours/creer-cours.component';
 import { AfficherCoursComponent } from './page/cours/afficher-cours/afficher-cours.component';
-import { CoursHomeComponent } from './page/cours/cours-home/cours-home.component';
 
 @NgModule({
   declarations: [
@@ -29,15 +25,11 @@ import { CoursHomeComponent } from './page/cours/cours-home/cours-home.component
     EleveComponent,
     AfficherEleveComponent,
     CreerSalleComponent,
-    EleveHomeComponent,
     AfficherSalleComponent,
-    SalleHomeComponent,
     CreerNiveauComponent,
     AfficherNiveauComponent,
-    NiveauHomeComponent,
     CreerCoursComponent, 
-    AfficherCoursComponent, 
-    CoursHomeComponent
+    AfficherCoursComponent
   ],
   imports: [
     BrowserModule,
