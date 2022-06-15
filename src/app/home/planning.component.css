@@ -21,7 +21,7 @@ li a {
     font-family: 'Poppins', sans-serif;
 }
 
-li a:hover:not(.application) {
+li a:hover:not(.not-content, .drop-content) {
     background-color: #111;
 }
 
@@ -48,10 +48,14 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {
+.dropdown a .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.drop-content:hover{
+    background-color: #d8d8d8;
 }
