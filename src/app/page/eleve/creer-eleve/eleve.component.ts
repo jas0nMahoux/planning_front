@@ -5,6 +5,7 @@ import { EleveService } from './eleve.service';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
+import { CreerNiveauService } from '../../niveau/creer-niveau/creer-niveau.service';
 
 @Component({
   selector: 'app-eleve',
@@ -24,7 +25,10 @@ export class EleveComponent implements OnInit{
     niveau: new FormControl()
   });
 
-  constructor(private eleveService: EleveService) {}
+  constructor(
+    private eleveService: EleveService, 
+    private creerNiveauService: CreerNiveauService) {
+  }
 
   submit() {
     this.createEleve(this.eleveForm);
@@ -32,7 +36,13 @@ export class EleveComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+    this.creerNiveauService.getAllNiveau().subscribe(
+      (response: Niveau[]) => {
+        this.niv = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
   }
   
   public createEleve(eleve: FormGroup): void {

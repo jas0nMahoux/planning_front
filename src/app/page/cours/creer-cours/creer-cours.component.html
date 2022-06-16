@@ -10,7 +10,7 @@
 
     <label for="niveau">Niveau</label>
     <select id="niveau" formControlName="niveau">
-        <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
+        <option *ngFor="let n of niv" [ngValue]="n">{{ n.libelle }}</option>
     </select>
 
     <label for="salle">Salle</label>
