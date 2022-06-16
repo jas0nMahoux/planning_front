@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SalleService } from '../creer-salle/salle.service';
+import { SalleService } from '../creer-salle/creer-salle.service';
 import { Salle } from '../salle';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherSalleService } from './afficher-salle.service';

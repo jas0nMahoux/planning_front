@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Eleve } from '../eleve';
-import { EleveService } from './eleve.service';
+import { EleveService } from './creer-eleve.service';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
@@ -9,10 +9,10 @@ import { CreerNiveauService } from '../../niveau/creer-niveau/creer-niveau.servi
 
 @Component({
   selector: 'app-eleve',
-  templateUrl: 'eleve.component.html',
-  styleUrls: ['eleve.component.css']
+  templateUrl: 'creer-eleve.component.html',
+  styleUrls: ['creer-eleve.component.css']
 })
-export class EleveComponent implements OnInit{
+export class CreerEleveComponent implements OnInit{
   eleve: Eleve;
   niv: Niveau[];
   cree = false;

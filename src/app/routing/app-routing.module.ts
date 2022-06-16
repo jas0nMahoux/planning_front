@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AfficherCoursComponent } from '../page/cours/afficher-cours/afficher-cours.component';
-import { CreerCoursComponent } from '../page/cours/creer-cours/creer-cours.component';
 import { AfficherEleveComponent } from '../page/eleve/afficher-eleve/afficher-eleve.component';
-import { EleveComponent } from '../page/eleve/creer-eleve/eleve.component';
 import { AfficherNiveauComponent } from '../page/niveau/afficher-niveau/afficher-niveau.component';
-import { CreerNiveauComponent } from '../page/niveau/creer-niveau/creer-niveau.component';
 import { AfficherSalleComponent } from '../page/salle/afficher-salle/afficher-salle.component';
+import { CreerCoursComponent } from '../page/cours/creer-cours/creer-cours.component';
+import { CreerEleveComponent } from '../page/eleve/creer-eleve/creer-eleve.component';
+import { CreerNiveauComponent } from '../page/niveau/creer-niveau/creer-niveau.component';
 import { CreerSalleComponent } from '../page/salle/creer-salle/creer-salle.component';
 
 const routes: Routes = [
-  { path:"eleve/creation", component: EleveComponent},
+  { path:"eleve/creation", component: CreerEleveComponent},
   { path:"eleve/consultation", component: AfficherEleveComponent},
 
   { path:"salle/creation", component: CreerSalleComponent},

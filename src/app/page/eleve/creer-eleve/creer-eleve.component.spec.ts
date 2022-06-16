@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EleveComponent } from './eleve.component';
+import { CreerEleveComponent } from './creer-eleve.component';
 
-describe('EleveComponent', () => {
-  let component: EleveComponent;
-  let fixture: ComponentFixture<EleveComponent>;
+describe('CreerEleveComponent', () => {
+  let component: CreerEleveComponent;
+  let fixture: ComponentFixture<CreerEleveComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EleveComponent ]
+      declarations: [ CreerEleveComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EleveComponent);
+    fixture = TestBed.createComponent(CreerEleveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
