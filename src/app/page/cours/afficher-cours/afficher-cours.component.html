@@ -3,7 +3,7 @@
   </div>
   
   <div class="content-list-cours" *ngIf="!modif">
-    <input type="submit" value="Liste des cours :">
+    <h1 class="title-list">Liste des cours :</h1>
     <div class="formulaire" *ngFor="let cours of allCours">
       <p>id: {{cours.id}}</p>
       <p>date de debut : {{cours.debut}}</p>

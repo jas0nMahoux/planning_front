@@ -65,3 +65,15 @@ h1 {
     text-align: center;
     color: #5469d4;
 }
+
+.title-list {
+    background-color: #5469d4;
+    color: white;
+    text-transform: none;
+    padding: 14px 20px;
+    border-radius: 4px;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 31%;
+    margin-right: 31%;
+}
