@@ -1,8 +1,8 @@
-<div *ngIf="allEleve.length == 0">
-  <p>Il n'y a pas d'élève enregistrer dans la base de données !</p>
+<div class="formulaire" *ngIf="allEleve.length == 0">
+  <h1>Il n'y a pas d'élèves enregistrer dans la base de données !</h1>
 </div>
 
-<div *ngIf="!modif">
+<div *ngIf="!modif && allEleve.length != 0">
   <div class="formulaire" *ngFor="let eleve of allEleve">
     <p>id: {{eleve.id}}</p>
     <p>nom : {{eleve.nom}}</p>

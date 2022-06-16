@@ -1,39 +1,39 @@
-<div *ngIf="allCours.length == 0">
-    <p>Il n'y a pas de cours enregistrer dans la base de données !</p>
+<div class="formulaire" *ngIf="allCours.length == 0">
+  <h1>Il n'y a pas de cours enregistrer dans la base de données !</h1>
+</div>
+
+<div class="content-list-cours" *ngIf="!modif && allCours.length != 0">
+  <h1 class="title-list">Liste des cours :</h1>
+  <div class="formulaire" *ngFor="let cours of allCours">
+    <p>id: {{cours.id}}</p>
+    <p>date de debut : {{cours.debut}}</p>
+    <p>date de fin : {{cours.fin}}</p>
+    <p>niveau : {{cours.niveau}}</p>
+    <p>salle : {{cours.salle}}</p>
+    <button (click)="removeCours(cours)">Supprimer le cours</button>
+    <button (click)="updateCours(cours)">Modifier le cours</button>
   </div>
-  
-  <div class="content-list-cours" *ngIf="!modif">
-    <h1 class="title-list">Liste des cours :</h1>
-    <div class="formulaire" *ngFor="let cours of allCours">
-      <p>id: {{cours.id}}</p>
-      <p>date de debut : {{cours.debut}}</p>
-      <p>date de fin : {{cours.fin}}</p>
-      <p>niveau : {{cours.niveau}}</p>
-      <p>salle : {{cours.salle}}</p>
-      <button (click)="removeCours(cours)">Supprimer le cours</button>
-      <button (click)="updateCours(cours)">Modifier le cours</button>
-    </div>
-  </div>
-  
-  <div class="formulaire" *ngIf="modif">
-    <form [formGroup]="coursForm" (ngSubmit)="submit(coursForm)" fxLayout="column">
+</div>
 
-      <label for="debut">Date de debut</label>
-      <input type="text" name="debut" id="debut" formControlName="debut" value="{{coursModif.debut}}">
+<div class="formulaire" *ngIf="modif">
+  <form [formGroup]="coursForm" (ngSubmit)="submit(coursForm)" fxLayout="column">
 
-      <label for="fin">Date de fin</label>
-      <input type="text" name="fin" id="fin" formControlName="fin" value="{{coursModif.fin}}">
+    <label for="debut">Date de debut</label>
+    <input type="text" name="debut" id="debut" formControlName="debut" value="{{coursModif.debut}}">
 
-      <label for="niveau">Niveau</label>
-      <select id="niveau" formControlName="niveau" value="{{coursModif.niveau}}">
-          <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
-      </select>
+    <label for="fin">Date de fin</label>
+    <input type="text" name="fin" id="fin" formControlName="fin" value="{{coursModif.fin}}">
 
-      <label for="salle">Salle</label>
-      <select id="salle" formControlName="salle" value="{{coursModif.salle}}">
-          <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
-      </select>
+    <label for="niveau">Niveau</label>
+    <select id="niveau" formControlName="niveau" value="{{coursModif.niveau}}">
+        <option *ngFor="let n of niv" [ngValue]="n">{{ n }}</option>
+    </select>
 
-      <input type="submit" value="Modifier">
-    </form>
-  </div>
+    <label for="salle">Salle</label>
+    <select id="salle" formControlName="salle" value="{{coursModif.salle}}">
+        <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
+    </select>
+
+    <input type="submit" value="Modifier">
+  </form>
+</div>
