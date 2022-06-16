@@ -10,12 +10,12 @@
 
     <label for="niveau">Niveau</label>
     <select id="niveau" formControlName="niveau">
-        <option *ngFor="let n of niv" [ngValue]="n">{{ n.libelle }}</option>
+        <option *ngFor="let n of niveaux" [ngValue]="n">{{ n.libelle }}</option>
     </select>
 
     <label for="salle">Salle</label>
     <select id="salle" formControlName="salle">
-        <option *ngFor="let s of salles" [ngValue]="s">{{ s }}</option>
+        <option *ngFor="let s of salles" [ngValue]="s">{{ s.code }}</option>
     </select>
 
     <input type="submit" value="Créer">

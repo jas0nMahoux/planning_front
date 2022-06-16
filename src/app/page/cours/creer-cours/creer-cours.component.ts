@@ -6,6 +6,8 @@ import { CreerCoursService } from './creer-cours.service';
 import { NgForm } from '@angular/forms';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Salle } from '../../salle/salle';
+import { SalleService } from '../../salle/creer-salle/creer-salle.service';
+import { CreerNiveauService } from '../../niveau/creer-niveau/creer-niveau.service';
 
 @Component({
   selector: 'app-creer-cours',
@@ -15,7 +17,7 @@ import { Salle } from '../../salle/salle';
 
 export class CreerCoursComponent implements OnInit{
   cours: Cours;
-  niv: Niveau[];
+  niveaux: Niveau[];
   salles: Salle[];
   cree = false;
 
@@ -29,7 +31,10 @@ export class CreerCoursComponent implements OnInit{
 
   
   
-  constructor(private coursService: CreerCoursService) {}
+  constructor(
+    private coursService: CreerCoursService, 
+    private niveauService: CreerNiveauService,
+    private salleService: SalleService) {}
 
   submit() {
     this.createCours(this.coursForm);
@@ -37,7 +42,20 @@ export class CreerCoursComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+    this.salleService.getAllSalle().subscribe(
+      (response: Salle[]) => {
+        this.salles = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+    this.niveauService.getAllNiveau().subscribe(
+      (response: Niveau[]) => {
+        this.niveaux = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
   }
   
   public createCours(cours: FormGroup): void {
