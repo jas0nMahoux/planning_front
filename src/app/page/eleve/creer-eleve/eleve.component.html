@@ -23,7 +23,8 @@
   </form>
 </div>
 
-<div *ngIf="cree">
-  <p>l'élève a bien été créé !</p>
-  <button (click)="creerAutreEleve()">Créer un autre élève</button>
+<div class="formulaire" *ngIf="cree">
+  <h1 style="padding-bottom: 20px;">L'élève a bien été créé !</h1>
+  <input type="submit" (click)="creerAutreEleve()" value="Créer un autre élève">
+  <input type="submit" routerLink="/eleve/consultation" value="Consulter la liste des élèves">
 </div>

@@ -12,7 +12,8 @@
   </form>
 </div>
 
-<div *ngIf="cree">
-  <p>le niveau a bien été créé !</p>
-  <button (click)="creerAutreNiveau()">Créer un autre niveau</button>
+<div class="formulaire" *ngIf="cree">
+  <h1 style="padding-bottom: 20px;">Le niveau a bien été créé !</h1>
+  <input type="submit" (click)="creerAutreNiveau()" value="Créer un autre niveau">
+  <input type="submit" routerLink="/niveau/consultation" value="Consulter la liste des niveaux">
 </div>

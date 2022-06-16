@@ -22,7 +22,8 @@
   </form>
 </div>
 
-<div *ngIf="cree">
-  <p>le cours a bien été créé !</p>
-  <button (click)="creerAutreCours()">Créer un autre cours</button>
+<div class="formulaire" *ngIf="cree">
+  <h1 style="padding-bottom: 20px;">Le cours a bien été créé !</h1>
+  <input type="submit" (click)="creerAutreCours()" value="Créer un autre cours">
+  <input type="submit" routerLink="/cours/consultation" value="Consulter la liste des cours">
 </div>

@@ -16,7 +16,8 @@
   </form>
 </div>
 
-<div *ngIf="cree">
-  <p>La salle a bien été créé !</p>
-  <button (click)="creerAutreSalle()">Créer une autre salle</button>
+<div class="formulaire" *ngIf="cree">
+  <h1 style="padding-bottom: 20px;">La salle a bien été créé !</h1>
+  <input type="submit" (click)="creerAutreSalle()" value="Créer une autre salle">
+  <input type="submit" routerLink="/salle/consultation" value="Consulter la liste des salles">
 </div>
