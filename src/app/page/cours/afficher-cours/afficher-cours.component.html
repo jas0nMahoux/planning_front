@@ -8,8 +8,8 @@
     <p>id: {{cours.id}}</p>
     <p>date de debut : {{cours.debut}}</p>
     <p>date de fin : {{cours.fin}}</p>
-    <p>niveau : {{cours.niveau}}</p>
-    <p>salle : {{cours.salle}}</p>
+    <p>niveau : {{cours.niveau.libelle}}</p>
+    <p>salle : {{cours.salle.code}}</p>
     <button (click)="removeCours(cours)">Supprimer le cours</button>
     <button (click)="updateCours(cours)">Modifier le cours</button>
   </div>
