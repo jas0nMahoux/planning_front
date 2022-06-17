@@ -18,7 +18,7 @@ export class AfficherEleveComponent implements OnInit {
   allEleve: Eleve[];
 
   eleveForm = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    id: new FormControl(),
     nom: new FormControl('', [Validators.required]),
     prenom: new FormControl('', [Validators.required]),
     age: new FormControl('', [Validators.required]),

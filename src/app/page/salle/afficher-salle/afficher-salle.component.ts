@@ -15,7 +15,7 @@ export class AfficherSalleComponent implements OnInit {
   allSalle: Salle[];
 
   salleForm = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    id: new FormControl(),
     capacite: new FormControl('', [Validators.required]),
     nom: new FormControl('', [Validators.required]),
     code: new FormControl('', [Validators.required])

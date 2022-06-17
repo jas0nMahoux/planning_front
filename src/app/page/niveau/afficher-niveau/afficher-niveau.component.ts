@@ -16,7 +16,7 @@ export class AfficherNiveauComponent implements OnInit {
   allNiveau: Niveau[];
 
   niveauForm = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    id: new FormControl(),
     code: new FormControl('', [Validators.required]),
     libelle: new FormControl('', [Validators.required])
   });

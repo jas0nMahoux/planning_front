@@ -21,7 +21,7 @@ export class AfficherCoursComponent implements OnInit {
   salles: Salle[];
 
   coursForm = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    id: new FormControl(),
     debut: new FormControl('', [Validators.required]),
     fin: new FormControl('', [Validators.required]),
     niveau: new FormControl('', [Validators.required]),

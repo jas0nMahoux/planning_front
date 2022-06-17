@@ -16,7 +16,7 @@ export class CreerSalleComponent implements OnInit{
   cree = false;
 
   salleForm = new FormGroup({
-    id: new FormControl('', [Validators.required]),
+    id: new FormControl(),
     capacite: new FormControl('', [Validators.required]),
     nom: new FormControl('', [Validators.required]),
     code: new FormControl('', [Validators.required])
