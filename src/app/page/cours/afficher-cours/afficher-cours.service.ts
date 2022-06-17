@@ -21,4 +21,8 @@ export class AfficherCoursService {
   public updateCours(c:FormGroup): Observable<Cours> {
     return this.http.put<Cours>(`${this.apiServerUrl}/updateCours`, c.value)
   }
+
+  public afficherCoursBySalle(): Observable<Cours[]> {
+    return this.http.get<Cours[]>(`${this.apiServerUrl}/findAllCours/salle`)
+  }
 }

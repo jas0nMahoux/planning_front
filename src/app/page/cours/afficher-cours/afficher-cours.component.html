@@ -2,6 +2,11 @@
   <h1>Il n'y a pas de cours enregistrer dans la base de données !</h1>
 </div>
 
+<div>
+  <p> filtrage par</p>
+  <button (click)="sortCoursBySalle()">salle</button>
+</div>
+
 <div class="content-list-cours" *ngIf="!modif && allCours.length != 0">
   <h1 class="title-list">Liste des cours :</h1>
   <div class="formulaire" *ngFor="let cours of allCours">

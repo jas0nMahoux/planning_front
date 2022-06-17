@@ -61,4 +61,14 @@ export class AfficherCoursComponent implements OnInit {
     this.modif = true;
   }
 
+  public sortCoursBySalle(): void {
+    this.afficherCoursService.afficherCoursBySalle().subscribe(
+      (response: Cours[]) => {
+        this.allCours = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
 }
