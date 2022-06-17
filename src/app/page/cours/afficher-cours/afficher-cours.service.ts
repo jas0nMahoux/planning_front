@@ -14,8 +14,8 @@ export class AfficherCoursService {
 
   constructor(private http: HttpClient) { }
 
-  public removeCours(c:Cours): Observable<Cours>{
-    return this.http.delete<Cours>(`${this.apiServerUrl}/deleteCours/${c.id}`)
+  public removeCours(c:Cours): Observable<Cours[]>{
+    return this.http.delete<Cours[]>(`${this.apiServerUrl}/deleteCours/${c.id}`)
   }
 
   public updateCours(c:FormGroup): Observable<Cours> {
