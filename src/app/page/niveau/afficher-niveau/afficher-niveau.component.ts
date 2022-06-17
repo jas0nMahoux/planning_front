@@ -43,6 +43,14 @@ export class AfficherNiveauComponent implements OnInit {
     }
     this.afficherNiveauService.updateNiveau(n).subscribe();
     this.modif = false;
+    this.allNiveau = [];
+    this.creerNiveauService.getAllNiveau().subscribe(
+      (response: Niveau[]) => {
+        this.allNiveau = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 
   public removeNiveau(n:Niveau):void {
