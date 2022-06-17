@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreerNiveauService } from '../creer-niveau/creer-niveau.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherNiveauService } from './afficher-niveau.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
 //import { number } from 'echarts';
 
@@ -16,9 +16,9 @@ export class AfficherNiveauComponent implements OnInit {
   allNiveau: Niveau[];
 
   niveauForm = new FormGroup({
-    id: new FormControl(),
-    code: new FormControl(),
-    libelle: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    code: new FormControl('', [Validators.required]),
+    libelle: new FormControl('', [Validators.required])
   });
   
   modif = false
@@ -38,6 +38,9 @@ export class AfficherNiveauComponent implements OnInit {
   }
 
   submit(n:FormGroup) {
+    if (this.niveauForm.invalid) {
+      return;
+    }
     this.afficherNiveauService.updateNiveau(n).subscribe();
     this.modif = false;
   }

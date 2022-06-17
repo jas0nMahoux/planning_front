@@ -2,14 +2,14 @@
   <h1>formulaire de création d'une salle</h1>
   <form [formGroup]="salleForm" (ngSubmit)="submit()" fxLayout="column">
 
-    <label for="capacite">Capacité</label>
+    <label for="capacite"><span style="color: red;">*</span> Capacité</label>
     <input type="text" formControlName="capacite" name="capacite" id="capacite" placeholder="Entrer la Capacité.." ngModel>
 
-    <label for="nom">Nom</label>
+    <label for="nom"><span style="color: red;">*</span> Nom</label>
     <input type="text" formControlName="nom" name="nom" id="nom" placeholder="Entrer le nom.." ngModel>
     
 
-    <label for="code">Code</label>
+    <label for="code"><span style="color: red;">*</span> Code</label>
     <input type="text" formControlName="code" name="code" id="code" placeholder="Entrer le code.." ngModel>
 
     <input type="submit" value="Créer">

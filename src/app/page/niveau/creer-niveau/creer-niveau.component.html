@@ -2,10 +2,10 @@
   <h1>formulaire de création d'un niveau</h1>
   <form [formGroup]="niveauForm" (ngSubmit)="submit()" fxLayout="column">
 
-    <label for="code">Code</label>
+    <label for="code"><span style="color: red;">*</span> Code</label>
     <input type="text" formControlName="code" name="code" id="code" placeholder="Entrer le code.." ngModel>
     
-    <label for="libelle">Libelle</label>
+    <label for="libelle"><span style="color: red;">*</span> Libelle</label>
     <input type="text" formControlName="libelle" name="libelle" id="libelle" placeholder="Entrer le libelle.." ngModel>
     
     <input type="submit" value="Créer">

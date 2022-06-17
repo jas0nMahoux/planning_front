@@ -23,10 +23,10 @@ export class CreerCoursComponent implements OnInit{
 
   coursForm = new FormGroup({
     id: new FormControl(),
-    debut: new FormControl(),
-    fin: new FormControl(),
-    niveau: new FormControl(),
-    salle: new FormControl()
+    debut: new FormControl('', [Validators.required]),
+    fin: new FormControl('', [Validators.required]),
+    niveau: new FormControl('', [Validators.required]),
+    salle: new FormControl('', [Validators.required])
   });
 
   
@@ -37,6 +37,9 @@ export class CreerCoursComponent implements OnInit{
     private salleService: SalleService) {}
 
   submit() {
+    if (this.coursForm.invalid) {
+      return;
+    }
     this.createCours(this.coursForm);
     this.cree = true;
   }

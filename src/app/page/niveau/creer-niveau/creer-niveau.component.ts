@@ -16,14 +16,17 @@ export class CreerNiveauComponent implements OnInit{
   cree = false;
 
   niveauForm = new FormGroup({
-    id: new FormControl(),
-    code: new FormControl(),
-    libelle: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    code: new FormControl('', [Validators.required]),
+    libelle: new FormControl('', [Validators.required])
   });
 
   constructor(private niveauService: CreerNiveauService) {}
 
   submit() {
+    if (this.niveauForm.invalid) {
+      return;
+    }
     this.createNiveau(this.niveauForm);
     this.cree = true;
   }

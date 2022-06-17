@@ -23,18 +23,18 @@
 <div class="formulaire" *ngIf="modif">
   <form [formGroup]="coursForm" (ngSubmit)="submit(coursForm)" fxLayout="column">
 
-    <label for="debut">Date de debut</label>
+    <label for="debut"><span style="color: red;">*</span> Date de debut</label>
     <input type="date" name="debut" id="debut" formControlName="debut" value="{{coursModif.debut}}">
 
-    <label for="fin">Date de fin</label>
+    <label for="fin"><span style="color: red;">*</span> Date de fin</label>
     <input type="date" name="fin" id="fin" formControlName="fin" value="{{coursModif.fin}}">
 
-    <label for="niveau">Niveau</label>
+    <label for="niveau"><span style="color: red;">*</span> Niveau</label>
     <select id="niveau" formControlName="niveau" value="{{coursModif.niveau}}">
         <option *ngFor="let n of niv" [ngValue]="n">{{ n.libelle }}</option>
     </select>
 
-    <label for="salle">Salle</label>
+    <label for="salle"><span style="color: red;">*</span> Salle</label>
     <select id="salle" formControlName="salle" value="{{coursModif.salle}}">
         <option *ngFor="let s of salles" [ngValue]="s">{{ s.code }}</option>
     </select>

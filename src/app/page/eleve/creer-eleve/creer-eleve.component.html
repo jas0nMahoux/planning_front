@@ -2,19 +2,19 @@
   <h1>Formulaire de création d'élève</h1>
   <form [formGroup]="eleveForm" (ngSubmit)="submit()" fxLayout="column">
 
-    <label for="nom">Nom</label>
+    <label for="nom"><span style="color: red;">*</span> Nom</label>
     <input type="text" formControlName="nom" name="nom" id="nom" placeholder="Entrer le nom.." ngModel>
 
-    <label for="prenom">Prenom</label>
+    <label for="prenom"><span style="color: red;">*</span> Prenom</label>
     <input type="text" formControlName="prenom" name="prenom" id="prenom" placeholder="Entrer le prenom.." ngModel>
 
-    <label for="age">Age</label>
+    <label for="age"><span style="color: red;">*</span> Age</label>
     <input type="text" formControlName="age" name="age" id="age" placeholder="Entrer l'age.." ngModel>
 
-    <label for="adresse">Adresse</label>
+    <label for="adresse"><span style="color: red;">*</span> Adresse</label>
     <input type="text" formControlName="adresse" name="adresse" id="adresse" placeholder="Entrer l'adresse.." ngModel>
 
-    <label for="niveau">Niveau</label>
+    <label for="niveau"><span style="color: red;">*</span> Niveau</label>
     <select id="niveau" formControlName="niveau" formControlName="niveau">
       <option *ngFor="let n of niv" [ngValue]="n">{{ n.libelle }}</option>
     </select>

@@ -17,13 +17,13 @@
   <!--<h1>Modification de la salle<h2>{{salleModif.code}}</h2></h1>-->
   <form [formGroup]="salleForm" (ngSubmit)="submit(salleForm)" fxLayout="column">
 
-    <label for="capacite">Capacité</label>
+    <label for="capacite"><span style="color: red;">*</span> Capacité</label>
     <input type="text" name="capacite" id="capacite" formControlName="capacite" value="{{salleModif.capacite}}">
 
-    <label for="nom">Nom</label>
+    <label for="nom"><span style="color: red;">*</span> Nom</label>
     <input type="text" name="nom" id="nom" formControlName="nom" value="{{salleModif.nom}}">
     
-    <label for="code">Code</label>
+    <label for="code"><span style="color: red;">*</span> Code</label>
     <input type="text" name="code" id="code" formControlName="code" value="{{salleModif.code}}">
 
     <input type="submit" value="Modifier">

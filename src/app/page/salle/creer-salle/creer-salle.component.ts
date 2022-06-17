@@ -16,15 +16,18 @@ export class CreerSalleComponent implements OnInit{
   cree = false;
 
   salleForm = new FormGroup({
-    id: new FormControl(),
-    capacite: new FormControl(),
-    nom: new FormControl(),
-    code: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    capacite: new FormControl('', [Validators.required]),
+    nom: new FormControl('', [Validators.required]),
+    code: new FormControl('', [Validators.required])
   });
 
   constructor(private salleService: SalleService) {}
 
   submit() {
+    if (this.salleForm.invalid) {
+      return;
+    }
     this.createSalle(this.salleForm);
     this.cree = true;
   }

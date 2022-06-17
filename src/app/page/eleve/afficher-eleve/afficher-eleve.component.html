@@ -26,19 +26,19 @@
 <div class="formulaire" *ngIf="modif">
   <form [formGroup]="eleveForm" (ngSubmit)="submit(eleveForm)" fxLayout="column">
 
-    <label for="nom">Nom</label>
+    <label for="nom"><span style="color: red;">*</span> Nom</label>
     <input type="text" name="nom" id="nom" formControlName="nom" value="{{eleveModif.nom}}">
     
-    <label for="prenom">Prenom</label>
+    <label for="prenom"><span style="color: red;">*</span> Prenom</label>
     <input type="text" name="prenom" id="prenom" formControlName="prenom" value="{{eleveModif.prenom}}">
 
-    <label for="age">Age</label>
+    <label for="age"><span style="color: red;">*</span> Age</label>
     <input type="text" name="age" id="age" formControlName="age" value="{{eleveModif.age}}">
 
-    <label for="adresse">Adresse</label>
+    <label for="adresse"><span style="color: red;">*</span> Adresse</label>
     <input type="text" name="adresse" id="adresse" formControlName="adresse" value="{{eleveModif.adresse}}">
 
-    <label for="niveau">Niveau</label>
+    <label for="niveau"><span style="color: red;">*</span> Niveau</label>
     <select id="niveau" formControlName="niveau" value="{{eleveModif.niveau}}">
       <option *ngFor="let n of niv" [ngValue]="n">{{ n.libelle }}</option>
     </select>

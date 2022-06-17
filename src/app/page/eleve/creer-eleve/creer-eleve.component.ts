@@ -18,11 +18,11 @@ export class CreerEleveComponent implements OnInit{
   cree = false;
 
   eleveForm = new FormGroup({
-    nom: new FormControl(),
-    prenom: new FormControl(),
-    age: new FormControl(),
-    adresse: new FormControl(),
-    niveau: new FormControl()
+    nom: new FormControl('', [Validators.required]),
+    prenom: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
+    adresse: new FormControl('', [Validators.required]),
+    niveau: new FormControl('', [Validators.required])
   });
 
   constructor(
@@ -31,6 +31,9 @@ export class CreerEleveComponent implements OnInit{
   }
 
   submit() {
+    if (this.eleveForm.invalid) {
+      return;
+    }
     this.createEleve(this.eleveForm);
     this.cree = true;
   }

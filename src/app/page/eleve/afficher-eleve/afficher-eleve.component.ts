@@ -3,7 +3,7 @@ import { EleveService } from '../creer-eleve/creer-eleve.service';
 import { Eleve } from '../eleve';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherEleveService } from './afficher-eleve.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
 import { AfficherNiveauService } from '../../niveau/afficher-niveau/afficher-niveau.service';
 import { CreerNiveauService } from '../../niveau/creer-niveau/creer-niveau.service';
@@ -18,12 +18,12 @@ export class AfficherEleveComponent implements OnInit {
   allEleve: Eleve[];
 
   eleveForm = new FormGroup({
-    id: new FormControl(),
-    nom: new FormControl(),
-    prenom: new FormControl(),
-    age: new FormControl(),
-    adresse: new FormControl(),
-    niveau: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    nom: new FormControl('', [Validators.required]),
+    prenom: new FormControl('', [Validators.required]),
+    age: new FormControl('', [Validators.required]),
+    adresse: new FormControl('', [Validators.required]),
+    niveau: new FormControl('', [Validators.required])
   });
   
   modif = false
@@ -53,6 +53,9 @@ export class AfficherEleveComponent implements OnInit {
   }
 
   submit(e:FormGroup) {
+    if (this.eleveForm.invalid) {
+      return;
+    }
     this.afficherEleveService.updateEleve(e).subscribe();
     this.modif = false;
   }

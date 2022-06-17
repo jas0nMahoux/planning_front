@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CreerCoursService } from '../creer-cours/creer-cours.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherCoursService } from './afficher-cours.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
 //import { number } from 'echarts';
 import { Cours } from '../cours';
@@ -21,11 +21,11 @@ export class AfficherCoursComponent implements OnInit {
   salles: Salle[];
 
   coursForm = new FormGroup({
-    id: new FormControl(),
-    debut: new FormControl(),
-    fin: new FormControl(),
-    niveau: new FormControl(),
-    salle: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    debut: new FormControl('', [Validators.required]),
+    fin: new FormControl('', [Validators.required]),
+    niveau: new FormControl('', [Validators.required]),
+    salle: new FormControl('', [Validators.required])
   });
   
   modif = false
@@ -60,6 +60,9 @@ export class AfficherCoursComponent implements OnInit {
   }
 
   submit(c:FormGroup) {
+    if (this.coursForm.invalid) {
+      return;
+    }
     this.afficherCoursService.updateCours(c).subscribe();
     this.modif = false;
   }

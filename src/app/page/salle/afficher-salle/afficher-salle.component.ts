@@ -3,7 +3,7 @@ import { SalleService } from '../creer-salle/creer-salle.service';
 import { Salle } from '../salle';
 import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherSalleService } from './afficher-salle.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 //import { number } from 'echarts';
 
 @Component({
@@ -15,10 +15,10 @@ export class AfficherSalleComponent implements OnInit {
   allSalle: Salle[];
 
   salleForm = new FormGroup({
-    id: new FormControl(),
-    capacite: new FormControl(),
-    nom: new FormControl(),
-    code: new FormControl()
+    id: new FormControl('', [Validators.required]),
+    capacite: new FormControl('', [Validators.required]),
+    nom: new FormControl('', [Validators.required]),
+    code: new FormControl('', [Validators.required])
   });
   
   modif = false
@@ -38,6 +38,9 @@ export class AfficherSalleComponent implements OnInit {
   }
 
   submit(s:FormGroup) {
+    if (this.salleForm.invalid) {
+      return;
+    }
     this.afficherSalleService.updateSalle(s).subscribe();
     this.modif = false;
   }

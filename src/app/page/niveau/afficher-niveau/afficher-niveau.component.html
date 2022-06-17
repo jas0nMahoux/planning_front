@@ -16,10 +16,10 @@
   
 <div class="formulaire" *ngIf="modif">
   <form [formGroup]="niveauForm" (ngSubmit)="submit(niveauForm)" fxLayout="column">
-    <label for="code">Code</label>
+    <label for="code"><span style="color: red;">*</span> Code</label>
     <input type="text" name="code" id="code" formControlName="code" value="{{niveauModif.code}}">
     
-    <label for="libelle">Libelle</label>
+    <label for="libelle"><span style="color: red;">*</span> Libelle</label>
     <input type="text" name="libelle" id="libelle" formControlName="libelle" value="{{niveauModif.libelle}}">
     
     <input type="submit" value="Modifier">
