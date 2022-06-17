@@ -21,4 +21,20 @@ export class AfficherEleveService {
   public updateEleve(e:FormGroup): Observable<Eleve> {
     return this.http.put<Eleve>(`${this.apiServerUrl}/update`, e.value)
   }
+
+  public afficherEleveByNom(): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(`${this.apiServerUrl}/findAllEleve/nom`)
+  }
+
+  public afficherEleveByPrenom(): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(`${this.apiServerUrl}/findAllEleve/prenom`)
+  }
+
+  public afficherEleveByAge(): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(`${this.apiServerUrl}/findAllEleve/age`)
+  }
+
+  public afficherEleveByNiveau(): Observable<Eleve[]> {
+    return this.http.get<Eleve[]>(`${this.apiServerUrl}/findAllEleve/niveau`)
+  }
 }

@@ -2,6 +2,14 @@
   <h1>Il n'y a pas d'élèves enregistrer dans la base de données !</h1>
 </div>
 
+<div>
+  <p> filtrage par</p>
+  <button (click)="sortEleveByNom()">Nom</button>
+  <button (click)="sortEleveByPrenom()">Prenom</button>
+  <button (click)="sortEleveByAge()">Age</button>
+  <button (click)="sortEleveByNiveau()">Niveau</button>
+</div>
+
 <div *ngIf="!modif && allEleve.length != 0">
   <div class="formulaire" *ngFor="let eleve of allEleve">
     <p>id: {{eleve.id}}</p>

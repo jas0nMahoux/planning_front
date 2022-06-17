@@ -27,6 +27,7 @@ export class AfficherNiveauComponent implements OnInit {
   constructor(private creerNiveauService: CreerNiveauService, private afficherNiveauService: AfficherNiveauService) { }
 
   ngOnInit(): void {
+    this.allNiveau = [];
     this.creerNiveauService.getAllNiveau().subscribe(
       (response: Niveau[]) => {
         this.allNiveau = response;

@@ -27,6 +27,7 @@ export class AfficherSalleComponent implements OnInit {
   constructor(private salleService: SalleService, private afficherSalleService: AfficherSalleService) { }
 
   ngOnInit(): void {
+    this.allSalle = [];
     this.salleService.getAllSalle().subscribe(
       (response: Salle[]) => {
         this.allSalle = response;

@@ -5,6 +5,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AfficherEleveService } from './afficher-eleve.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Niveau } from '../../niveau/niveau';
+import { AfficherNiveauService } from '../../niveau/afficher-niveau/afficher-niveau.service';
+import { CreerNiveauService } from '../../niveau/creer-niveau/creer-niveau.service';
 //import { number } from 'echarts';
 
 @Component({
@@ -29,9 +31,11 @@ export class AfficherEleveComponent implements OnInit {
 
   niv: Niveau[];
 
-  constructor(private eleveService: EleveService, private afficherEleveService: AfficherEleveService) { }
+  constructor(private eleveService: EleveService, private afficherEleveService: AfficherEleveService,
+    private creerNiveauService: CreerNiveauService) { }
 
   ngOnInit(): void {
+    this.allEleve = [];
     this.eleveService.getAllEleve().subscribe(
       (response: Eleve[]) => {
         this.allEleve = response;
@@ -39,6 +43,13 @@ export class AfficherEleveComponent implements OnInit {
         alert(error.message);
       }
     )
+    this.creerNiveauService.getAllNiveau().subscribe(
+      (response: Niveau[]) => {
+        this.niv = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )      
   }
 
   submit(e:FormGroup) {
@@ -59,6 +70,46 @@ export class AfficherEleveComponent implements OnInit {
     this.eleveForm.controls['adresse'].setValue(this.eleveModif.adresse);
     this.eleveForm.controls['niveau'].setValue(this.eleveModif.niveau);
     this.modif = true;
+  }
+
+  public sortEleveByNom(): void {
+    this.afficherEleveService.afficherEleveByNom().subscribe(
+      (response: Eleve[]) => {
+        this.allEleve = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public sortEleveByPrenom(): void {
+    this.afficherEleveService.afficherEleveByPrenom().subscribe(
+      (response: Eleve[]) => {
+        this.allEleve = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public sortEleveByAge(): void {
+    this.afficherEleveService.afficherEleveByAge().subscribe(
+      (response: Eleve[]) => {
+        this.allEleve = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
+  }
+
+  public sortEleveByNiveau(): void {
+    this.afficherEleveService.afficherEleveByNiveau().subscribe(
+      (response: Eleve[]) => {
+        this.allEleve = response;
+      }, (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    )
   }
 
 }
